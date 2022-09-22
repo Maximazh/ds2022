@@ -1,0 +1,25 @@
+core:
+  listeningAddress: :8123
+  externalUrl: http://c-rtr.ds22.local
+  adminUser: admin@ds22.local
+  adminPass: P@ssw0rd
+  editableKeys: true
+  createDefaultPeer: false
+  ldapEnabled: true
+  mailFrom: WireGuard VPN <noreply@test.com>
+ldap:
+  url: ldap://172.16.10.10:389
+  dn: DC=ds22,DC=local
+  startTLS: false
+  user: uid=admin,cn=users,cn=compat,dc=ds22,dc=local
+  pass: P@ssw0rd
+  adminGroup: uid=admins,cn=groups,cn=compat,dc=ds22,dc=local
+database:
+  typ: sqlite
+  database: data/wg_portal.db
+wg:
+  devices:
+    - wgvpn
+  defaultDevice: wgvpn
+  configDirectory: /etc/wireguard
+  manageIPAddresses: true
